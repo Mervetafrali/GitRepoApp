@@ -23,9 +23,8 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
 
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!
-    private val viewModel:RepoViewModel by viewModels()
     private lateinit var  repoAdapter: RepoAdapter
-
+    private val viewModel:RepoViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,14 +43,14 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
     }
     private fun setRV(){
         repoAdapter= RepoAdapter()
-        binding.recyclerView.apply {
+        binding.repo.apply {
             layoutManager=GridLayoutManager(activity,2)
             setHasFixedSize(true)
             adapter=repoAdapter
         }
         viewModel.repoResponse.observe(requireActivity()) { result ->
-            Log.i("tag","fragment"+result.toString())
-            repoAdapter.repo=result
+           // Log.i("tag","fragment"+result.toString())
+            repoAdapter.repos=result
         }
     }
 
