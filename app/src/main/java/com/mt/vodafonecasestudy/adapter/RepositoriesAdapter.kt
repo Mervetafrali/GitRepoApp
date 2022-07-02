@@ -3,6 +3,7 @@ package com.mt.vodafonecasestudy.adapter
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
@@ -58,7 +59,7 @@ class RepositoriesAdapter : RecyclerView.Adapter<RepositoriesAdapter.MyViewHolde
             repoName.text = currentItem.full_name
         }
         holder.itemView.setOnClickListener {mView->
-            val direction = RepositoriesFragmentDirections.actionRepositoriesFragmentToRepositoryDetailFragment3()
+            val direction = RepositoriesFragmentDirections.actionRepositoriesFragmentToRepositoryDetailFragment3(currentItem)
             mView.findNavController().navigate(direction)
 
         }
@@ -66,3 +67,6 @@ class RepositoriesAdapter : RecyclerView.Adapter<RepositoriesAdapter.MyViewHolde
 
     override fun getItemCount() = repos.size
 }
+
+
+

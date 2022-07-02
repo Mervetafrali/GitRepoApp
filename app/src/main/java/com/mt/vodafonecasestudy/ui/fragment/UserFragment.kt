@@ -6,12 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.navArgs
+import coil.load
 import com.mt.vodafonecasestudy.R
 import com.mt.vodafonecasestudy.adapter.ReposAdapter
-import com.mt.vodafonecasestudy.databinding.FragmentRepoDetailBinding
 import com.mt.vodafonecasestudy.databinding.FragmentUserBinding
-import com.mt.vodafonecasestudy.model.RepositoriesItem
 import com.mt.vodafonecasestudy.model.Users
 import com.mt.vodafonecasestudy.viewmodel.RepoViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,7 +19,7 @@ class UserFragment : Fragment(R.layout.fragment_user) {
 
     private var _binding: FragmentUserBinding? = null
     private val binding get() = _binding!!
-
+    private lateinit var reposAdapter: ReposAdapter
     private lateinit var user: Users
     private val viewModel: RepoViewModel by viewModels()
 
@@ -38,9 +36,20 @@ class UserFragment : Fragment(R.layout.fragment_user) {
         setRV()
     }
     private fun setRV(){
-        viewModel.userResponse.observe(requireActivity()){user->
-            binding.text.text=user.name
+        reposAdapter=ReposAdapter()
+        viewModel.reposResponse.observe(requireActivity()){result->
+            reposAdapter.repoDetail=result
         }
+        viewModel.userResponse.observe(requireActivity()){user->
+            binding.name.text=user.name
+            binding.mail.text= user.email?.toString()
+            binding.imageView2.load(user.avatar_url) {
+                crossfade(true)
+                crossfade(2000)
+            }
+        }
+
+
     }
 
 }

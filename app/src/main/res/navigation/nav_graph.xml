@@ -21,11 +21,14 @@
         android:label="fragment_repo_detail"
         tools:layout="@layout/fragment_repo_detail">
         <action
-            android:id="@+id/action_repositoryDetailFragment3_to_userFragment3"
-            app:destination="@id/userFragment3" />
-        <action
             android:id="@+id/action_repositoryDetailFragment3_to_repositoriesFragment"
             app:destination="@id/repositoriesFragment" />
+        <argument
+            android:name="repos"
+            app:argType="com.mt.vodafonecasestudy.model.RepositoriesItem" />
+        <action
+            android:id="@+id/action_repositoryDetailFragment3_to_userFragment3"
+            app:destination="@id/userFragment3" />
     </fragment>
     <fragment
         android:id="@+id/repositoriesFragment"
