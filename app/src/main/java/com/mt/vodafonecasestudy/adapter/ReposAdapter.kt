@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.mt.vodafonecasestudy.databinding.RepoDetailLayoutAdapterBinding
 import com.mt.vodafonecasestudy.model.ReposItem
 import com.mt.vodafonecasestudy.ui.fragment.RepositoryDetailFragmentDirections
@@ -43,6 +44,7 @@ class ReposAdapter: RecyclerView.Adapter<ReposAdapter.MyViewHolder>() {
         override fun onBindViewHolder(holder: ReposAdapter.MyViewHolder, position: Int) {
             val currentItem = repoDetail[position]
             Log.i("tag", "current:" + currentItem.toString())
+
             holder.binding.apply {
                 repoNameText.text=currentItem.full_name
                 ownerUsernameText.text=currentItem.name
@@ -51,7 +53,7 @@ class ReposAdapter: RecyclerView.Adapter<ReposAdapter.MyViewHolder>() {
                 dfBrancNameText.text=currentItem.default_branch
             }
             holder.itemView.setOnClickListener {mView->
-                val direction = RepositoryDetailFragmentDirections.actionSecondFragmentToUserFragment()
+                val direction = RepositoryDetailFragmentDirections.actionRepositoryDetailFragment3ToUserFragment3()
                 mView.findNavController().navigate(direction)
 
             }

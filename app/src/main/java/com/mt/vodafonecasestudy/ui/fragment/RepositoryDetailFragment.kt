@@ -12,8 +12,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.mt.vodafonecasestudy.R
 import com.mt.vodafonecasestudy.adapter.ReposAdapter
 import com.mt.vodafonecasestudy.databinding.FragmentRepoDetailBinding
-import com.mt.vodafonecasestudy.databinding.FragmentRepositoriesBinding
-import com.mt.vodafonecasestudy.model.RepositoriesItem
 import com.mt.vodafonecasestudy.viewmodel.RepoViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,8 +24,6 @@ class RepositoryDetailFragment : Fragment(R.layout.fragment_repo_detail) {
     private var _binding: FragmentRepoDetailBinding? = null
     private val binding get() = _binding!!
     private lateinit var reposAdapter: ReposAdapter
-    private val args: RepositoryDetailFragmentArgs by navArgs()
-    private lateinit var repo:RepositoriesItem
     private val viewModel: RepoViewModel by viewModels()
 
     override fun onCreateView(
@@ -42,7 +38,6 @@ class RepositoryDetailFragment : Fragment(R.layout.fragment_repo_detail) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        repo=args.repo
         setRV()
 
     }

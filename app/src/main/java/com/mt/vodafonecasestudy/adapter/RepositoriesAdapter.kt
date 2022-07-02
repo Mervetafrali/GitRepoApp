@@ -49,7 +49,6 @@ class RepositoriesAdapter : RecyclerView.Adapter<RepositoriesAdapter.MyViewHolde
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = repos[position]
-       // Log.i("tag", "current:" + currentItem.toString())
         holder.binding.apply {
             name.text = currentItem.name
             imageView.load(currentItem.owner.avatar_url) {
@@ -59,7 +58,7 @@ class RepositoriesAdapter : RecyclerView.Adapter<RepositoriesAdapter.MyViewHolde
             repoName.text = currentItem.full_name
         }
         holder.itemView.setOnClickListener {mView->
-            val direction = RepositoriesFragmentDirections.actionFirstFragmentToSecondFragment(currentItem)
+            val direction = RepositoriesFragmentDirections.actionRepositoriesFragmentToRepositoryDetailFragment3()
             mView.findNavController().navigate(direction)
 
         }

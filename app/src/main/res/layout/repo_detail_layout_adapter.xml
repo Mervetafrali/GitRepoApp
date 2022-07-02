@@ -3,68 +3,121 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="wrap_content"
     android:elevation="10dp"
     android:layout_margin="5dp"
     app:cardCornerRadius="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/repoNameText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="8dp"
-            android:textColor="@color/black"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:text="name" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp">
 
-        <TextView
-            android:id="@+id/ownerUsernameText"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="8dp"
-            android:textColor="@color/black"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:text="name" />
+            android:layout_marginVertical="10dp"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/forkCount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="8dp"
-            android:textColor="@color/black"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:text="name" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Repository Name:"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/languageText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="8dp"
-            android:textColor="@color/black"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:text="name" />
+            <TextView
+                android:id="@+id/repoNameText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="TextView" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/dfBrancNameText"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="8dp"
-            android:textColor="@color/black"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:text="name"/>
+            android:layout_marginVertical="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Owner User Name:"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ownerUsernameText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="TextView" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Forks Count:"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/forkCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="TextView" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Language:"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/languageText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="TextView" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Branch Name:"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dfBrancNameText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="TextView" />
+        </LinearLayout>
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>
