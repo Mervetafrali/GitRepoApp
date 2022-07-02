@@ -6,8 +6,13 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_repo_detail.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_repositories.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/repo_layout_adapter.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_user.xml" value="0.11413043478260869" />
+        <entry key="app/src/main/res/layout/repo_detail_layout_adapter.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/repo_layout_adapter.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/users_layout_adapter.xml" value="0.1" />
       </map>
     </option>
   </component>

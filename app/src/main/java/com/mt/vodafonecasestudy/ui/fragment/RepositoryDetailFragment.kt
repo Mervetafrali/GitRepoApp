@@ -11,6 +11,7 @@ import androidx.navigation.fragment.navArgs
 import coil.load
 import com.mt.vodafonecasestudy.R
 import com.mt.vodafonecasestudy.databinding.FragmentRepoDetailBinding
+import com.mt.vodafonecasestudy.helper.Constants
 
 import com.mt.vodafonecasestudy.model.ReposItem
 import com.mt.vodafonecasestudy.model.RepositoriesItem
@@ -52,8 +53,10 @@ class RepositoryDetailFragment : Fragment(R.layout.fragment_repo_detail) {
                 crossfade(true)
                 crossfade(2000)
             }
+            val url = repo.name + "/repos"
+
             viewModel.reposResponse.observe(requireActivity()) { result ->
-                val newRes: ReposItem? =result.find { item-> item.name.equals(repo.name) }
+                val newRes: ReposItem? = result.find { item -> item.name.equals(repo.name) }
                 binding.repoNameText.text = newRes?.name
                 binding.ownerUsernameText.text = newRes?.full_name
                 binding.forkCount.text = newRes?.forks_count.toString()
@@ -63,8 +66,9 @@ class RepositoryDetailFragment : Fragment(R.layout.fragment_repo_detail) {
 
 
         }
-        binding.imageView.setOnClickListener{ mView->
-            val direction = RepositoryDetailFragmentDirections.actionRepositoryDetailFragment3ToUserFragment3()
+        binding.imageView.setOnClickListener { mView ->
+            val direction =
+                RepositoryDetailFragmentDirections.actionRepositoryDetailFragment3ToUserFragment3()
             mView.findNavController().navigate(direction)
         }
 

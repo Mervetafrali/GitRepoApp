@@ -33,7 +33,7 @@
     <fragment
         android:id="@+id/repositoriesFragment"
         android:name="com.mt.vodafonecasestudy.ui.fragment.RepositoriesFragment"
-        android:label="RepositoriesFragment" >
+        android:label="RepositoriesFragment">
         <action
             android:id="@+id/action_repositoriesFragment_to_repositoryDetailFragment3"
             app:destination="@id/repositoryDetailFragment3" />

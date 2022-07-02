@@ -21,7 +21,6 @@ class UserFragment : Fragment(R.layout.fragment_user) {
     private val binding get() = _binding!!
     private lateinit var reposAdapter: ReposAdapter
     private val viewModel: RepoViewModel by viewModels()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,9 +39,9 @@ class UserFragment : Fragment(R.layout.fragment_user) {
     private fun setRV() {
         reposAdapter = ReposAdapter()
         binding.repos.apply {
-            layoutManager= GridLayoutManager(activity,1)
+            layoutManager = GridLayoutManager(activity, 1)
             setHasFixedSize(true)
-            adapter=reposAdapter
+            adapter = reposAdapter
         }
         viewModel.reposResponse.observe(requireActivity()) { result ->
             reposAdapter.repoDetail = result

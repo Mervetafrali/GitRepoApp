@@ -51,4 +51,4 @@ data class RepositoriesItem(
     val teams_url: String,
     val trees_url: String,
     val url: String
-): Parcelable
+) : Parcelable
