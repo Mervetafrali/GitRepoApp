@@ -36,7 +36,6 @@ class RepositoriesFragment : Fragment(R.layout.fragment_repositories) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         setRV()
     }
     private fun setRV(){

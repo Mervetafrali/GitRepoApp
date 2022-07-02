@@ -52,11 +52,6 @@ class ReposAdapter: RecyclerView.Adapter<ReposAdapter.MyViewHolder>() {
                 languageText.text=currentItem.language
                 dfBrancNameText.text=currentItem.default_branch
             }
-            holder.itemView.setOnClickListener {mView->
-                val direction = RepositoryDetailFragmentDirections.actionRepositoryDetailFragment3ToUserFragment3()
-                mView.findNavController().navigate(direction)
-
-            }
         }
 
         override fun getItemCount() = repoDetail.size

@@ -26,9 +26,6 @@
         android:layout_height="wrap_content"
         android:text="TextView" />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/repos"
             android:layout_width="match_parent"
@@ -36,7 +33,7 @@
             tools:listitem="@layout/repo_detail_layout_adapter"
             android:layout_marginTop="12dp" >
         </androidx.recyclerview.widget.RecyclerView>
-    </androidx.cardview.widget.CardView>
+
 
 
 
