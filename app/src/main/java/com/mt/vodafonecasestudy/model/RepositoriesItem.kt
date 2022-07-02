@@ -1,5 +1,9 @@
 package com.mt.vodafonecasestudy.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class RepositoriesItem(
     val archive_url: String,
     val assignees_url: String,
@@ -47,4 +51,4 @@ data class RepositoriesItem(
     val teams_url: String,
     val trees_url: String,
     val url: String
-)
+): Parcelable

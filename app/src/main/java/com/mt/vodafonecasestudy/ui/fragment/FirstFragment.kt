@@ -44,7 +44,7 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
     private fun setRV(){
         repoAdapter= RepoAdapter()
         binding.repo.apply {
-            layoutManager=GridLayoutManager(activity,2)
+            layoutManager=GridLayoutManager(activity,1)
             setHasFixedSize(true)
             adapter=repoAdapter
         }

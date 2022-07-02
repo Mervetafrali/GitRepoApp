@@ -22,5 +22,8 @@
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <argument
+            android:name="repo"
+            app:argType="com.mt.vodafonecasestudy.model.RepositoriesItem" />
     </fragment>
 </navigation>
