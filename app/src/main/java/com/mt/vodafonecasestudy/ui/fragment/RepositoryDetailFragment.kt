@@ -6,29 +6,35 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.GridLayoutManager
 import com.mt.vodafonecasestudy.R
-import com.mt.vodafonecasestudy.databinding.FragmentSecondBinding
+import com.mt.vodafonecasestudy.adapter.ReposAdapter
+import com.mt.vodafonecasestudy.databinding.FragmentRepoDetailBinding
+import com.mt.vodafonecasestudy.databinding.FragmentRepositoriesBinding
 import com.mt.vodafonecasestudy.model.RepositoriesItem
+import com.mt.vodafonecasestudy.viewmodel.RepoViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
+@AndroidEntryPoint
+class RepositoryDetailFragment : Fragment(R.layout.fragment_repo_detail) {
 
-class SecondFragment : Fragment(R.layout.fragment_second) {
-
-    private var _binding: FragmentSecondBinding? = null
+    private var _binding: FragmentRepoDetailBinding? = null
     private val binding get() = _binding!!
-    private val args: SecondFragmentArgs by navArgs()
+    private lateinit var reposAdapter: ReposAdapter
+    private val args: RepositoryDetailFragmentArgs by navArgs()
     private lateinit var repo:RepositoriesItem
+    private val viewModel: RepoViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSecondBinding.inflate(
+        _binding = FragmentRepoDetailBinding.inflate(
             inflater, container, false
         )
         return binding.root
@@ -36,19 +42,21 @@ class SecondFragment : Fragment(R.layout.fragment_second) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         repo=args.repo
         setRV()
 
     }
     private fun setRV(){
-        binding.apply {
-            binding.repoNameText.text=repo.full_name
-            binding.ownerUsernameText.text=repo.name
-            binding.forkCount.text=repo.full_name
-            binding.languageText.text=repo.full_name
-            binding.dfBrancNameText.text=repo.full_name
+        reposAdapter=ReposAdapter()
+        binding.repos.apply {
+            layoutManager= GridLayoutManager(activity,1)
+            setHasFixedSize(true)
+            adapter=reposAdapter
         }
+        viewModel.reposResponse.observe(requireActivity()){result->
+            reposAdapter.repoDetail=result
+        }
+
     }
 
     override fun onDestroyView() {

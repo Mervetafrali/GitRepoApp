@@ -7,23 +7,35 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.mt.vodafonecasestudy.ui.fragment.FirstFragment"
+        android:name="com.mt.vodafonecasestudy.ui.fragment.RepositoriesFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_repositories">
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.mt.vodafonecasestudy.ui.fragment.SecondFragment"
+        android:name="com.mt.vodafonecasestudy.ui.fragment.RepositoryDetailFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+        tools:layout="@layout/fragment_repo_detail">
         <argument
             android:name="repo"
             app:argType="com.mt.vodafonecasestudy.model.RepositoriesItem" />
+        <action
+            android:id="@+id/action_SecondFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.mt.vodafonecasestudy.ui.fragment.UserFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user" >
+        <action
+            android:id="@+id/action_userFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
     </fragment>
 </navigation>

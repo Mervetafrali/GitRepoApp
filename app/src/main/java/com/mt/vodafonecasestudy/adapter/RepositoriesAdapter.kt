@@ -1,6 +1,5 @@
 package com.mt.vodafonecasestudy.adapter
 
-import android.text.Layout
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,14 +8,11 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.mt.vodafonecasestudy.R
 import com.mt.vodafonecasestudy.databinding.RepoLayoutAdapterBinding
 import com.mt.vodafonecasestudy.model.RepositoriesItem
-import com.mt.vodafonecasestudy.ui.fragment.FirstFragment
-import com.mt.vodafonecasestudy.ui.fragment.FirstFragmentDirections
-import com.mt.vodafonecasestudy.ui.fragment.SecondFragment
+import com.mt.vodafonecasestudy.ui.fragment.RepositoriesFragmentDirections
 
-class RepoAdapter : RecyclerView.Adapter<RepoAdapter.MyViewHolder>() {
+class RepositoriesAdapter : RecyclerView.Adapter<RepositoriesAdapter.MyViewHolder>() {
     inner class MyViewHolder(val binding: RepoLayoutAdapterBinding) :
         RecyclerView.ViewHolder(binding.root)
 
@@ -53,7 +49,7 @@ class RepoAdapter : RecyclerView.Adapter<RepoAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = repos[position]
-        Log.i("tag", "current:" + currentItem.toString())
+       // Log.i("tag", "current:" + currentItem.toString())
         holder.binding.apply {
             name.text = currentItem.name
             imageView.load(currentItem.owner.avatar_url) {
@@ -63,7 +59,7 @@ class RepoAdapter : RecyclerView.Adapter<RepoAdapter.MyViewHolder>() {
             repoName.text = currentItem.full_name
         }
         holder.itemView.setOnClickListener {mView->
-            val direction = FirstFragmentDirections.actionFirstFragmentToSecondFragment(currentItem)
+            val direction = RepositoriesFragmentDirections.actionFirstFragmentToSecondFragment(currentItem)
             mView.findNavController().navigate(direction)
 
         }
