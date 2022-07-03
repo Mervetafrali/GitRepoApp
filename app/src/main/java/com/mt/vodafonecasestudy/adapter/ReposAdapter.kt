@@ -43,11 +43,9 @@ class ReposAdapter : RecyclerView.Adapter<ReposAdapter.MyViewHolder>() {
         Log.i("tag", "current:" + currentItem.toString())
 
         holder.binding.apply {
-            repoNameText.text = currentItem.full_name
-            ownerUsernameText.text = currentItem.name
-            forkCount.text = currentItem.forks_count.toString()
-            languageText.text = currentItem.language
-            dfBrancNameText.text = currentItem.default_branch
+            repoNameText.text=currentItem.name
+            languageText.text=currentItem.language
+            dfBrancNameText.text=currentItem.default_branch
         }
     }
 

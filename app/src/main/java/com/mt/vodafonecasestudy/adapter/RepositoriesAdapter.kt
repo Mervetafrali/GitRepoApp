@@ -54,7 +54,7 @@ class RepositoriesAdapter : RecyclerView.Adapter<RepositoriesAdapter.MyViewHolde
                 crossfade(true)
                 crossfade(2000)
             }
-            repoName.text = currentItem.full_name
+            repoName.text = currentItem.owner.login
         }
         holder.itemView.setOnClickListener { mView ->
             val direction =

@@ -58,7 +58,7 @@ class RepositoryDetailFragment : Fragment(R.layout.fragment_repo_detail) {
             viewModel.reposResponse.observe(requireActivity()) { result ->
                 val newRes: ReposItem? = result.find { item -> item.name.equals(repo.name) }
                 binding.repoNameText.text = newRes?.name
-                binding.ownerUsernameText.text = newRes?.full_name
+                binding.ownerUsernameText.text = newRes?.owner?.login
                 binding.forkCount.text = newRes?.forks_count.toString()
                 binding.languageText.text = newRes?.language
                 binding.dfBrancNameText.text = newRes?.default_branch
