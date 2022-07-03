@@ -1,12 +1,16 @@
 package com.mt.vodafonecasestudy.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Users(
     val avatar_url: String,
-    val bio: Any,
+    val bio: String,
     val blog: String,
     val company: String,
     val created_at: String,
-    val email: Any,
+    val email: String,
     val events_url: String,
     val followers: Int,
     val followers_url: String,
@@ -14,7 +18,7 @@ data class Users(
     val following_url: String,
     val gists_url: String,
     val gravatar_id: String,
-    val hireable: Any,
+    val hireable: String,
     val html_url: String,
     val id: Int,
     val location: String,
@@ -29,8 +33,8 @@ data class Users(
     val site_admin: Boolean,
     val starred_url: String,
     val subscriptions_url: String,
-    val twitter_username: Any,
+    val twitter_username: String,
     val type: String,
     val updated_at: String,
     val url: String
-)
+): Parcelable

@@ -53,8 +53,8 @@ class RepositoryDetailFragment : Fragment(R.layout.fragment_repo_detail) {
                 crossfade(true)
                 crossfade(2000)
             }
-            val url = repo.name + "/repos"
-
+            val urlRepo = Constants.BASE_URL+"users/"+repo.owner.login+"/repos"
+            viewModel.getRepoUrl(urlRepo)
             viewModel.reposResponse.observe(requireActivity()) { result ->
                 val newRes: ReposItem? = result.find { item -> item.name.equals(repo.name) }
                 binding.repoNameText.text = newRes?.name
@@ -68,7 +68,7 @@ class RepositoryDetailFragment : Fragment(R.layout.fragment_repo_detail) {
         }
         binding.imageView.setOnClickListener { mView ->
             val direction =
-                RepositoryDetailFragmentDirections.actionRepositoryDetailFragment3ToUserFragment3()
+                RepositoryDetailFragmentDirections.actionRepositoryDetailFragment3ToUserFragment3(repo.owner.login)
             mView.findNavController().navigate(direction)
         }
 
