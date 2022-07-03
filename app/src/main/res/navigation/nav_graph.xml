@@ -3,26 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/repositoriesFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.mt.vodafonecasestudy.ui.fragment.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
+        android:id="@+id/userFragment3"
+        android:name="com.mt.vodafonecasestudy.ui.fragment.UserFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user">
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_userFragment3_to_repositoryDetailFragment3"
+            app:destination="@id/repositoryDetailFragment3" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/repositoryDetailFragment3"
+        android:name="com.mt.vodafonecasestudy.ui.fragment.RepositoryDetailFragment"
+        android:label="fragment_repo_detail"
+        tools:layout="@layout/fragment_repo_detail">
+        <action
+            android:id="@+id/action_repositoryDetailFragment3_to_repositoriesFragment"
+            app:destination="@id/repositoriesFragment" />
+        <argument
+            android:name="repos"
+            app:argType="com.mt.vodafonecasestudy.model.RepositoriesItem" />
+        <action
+            android:id="@+id/action_repositoryDetailFragment3_to_userFragment3"
+            app:destination="@id/userFragment3" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.mt.vodafonecasestudy.ui.fragment.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        android:id="@+id/repositoriesFragment"
+        android:name="com.mt.vodafonecasestudy.ui.fragment.RepositoriesFragment"
+        android:label="RepositoriesFragment">
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_repositoriesFragment_to_repositoryDetailFragment3"
+            app:destination="@id/repositoryDetailFragment3" />
     </fragment>
 </navigation>
