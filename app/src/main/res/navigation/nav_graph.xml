@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_userFragment3_to_repositoryDetailFragment3"
             app:destination="@id/repositoryDetailFragment3" />
+        <argument
+            android:name="userName"
+            app:argType="string" />
     </fragment>
 
     <fragment

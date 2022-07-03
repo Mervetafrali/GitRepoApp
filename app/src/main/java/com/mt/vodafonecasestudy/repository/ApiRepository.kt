@@ -1,6 +1,7 @@
 package com.mt.vodafonecasestudy.repository
 
 import com.mt.vodafonecasestudy.api.ApiService
+import retrofit2.http.Url
 import javax.inject.Inject
 
 class ApiRepository
@@ -8,8 +9,8 @@ class ApiRepository
 
     suspend fun getRepository() = apiService.getRepository()
 
-    suspend fun getUser() = apiService.getUser()
+    suspend fun getUser(@Url url:String) = apiService.getUser(url)
 
-    suspend fun getRepos() = apiService.getRepos()
+    suspend fun getRepos(@Url url:String) = apiService.getRepos(url)
 
 }
