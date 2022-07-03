@@ -1,6 +1,8 @@
 # Vodafone Case Study
 Application that makes  API request and receives services.
 
+> **_NOTE:_**  dynamic url not working.
+
 [![N|Screen](https://github.com/Mervetafrali/VodafoneCaseStudy/blob/master/Screen1.png)]()
 [![N|Screen](https://github.com/Mervetafrali/VodafoneCaseStudy/blob/master/Screen2.png)]()
 [![N|Screen](https://github.com/Mervetafrali/VodafoneCaseStudy/blob/master/Screen3.png)]()
