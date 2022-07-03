@@ -29,8 +29,8 @@
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="180dp"
-            android:layout_height="180dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_gravity="center">
 
             <ImageView
@@ -70,9 +70,9 @@
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_weight="6"
         tools:listitem="@layout/repo_detail_layout_adapter"
-        android:layout_marginTop="12dp" >
+        android:layout_marginTop="5dp" >
     </androidx.recyclerview.widget.RecyclerView>
 
 

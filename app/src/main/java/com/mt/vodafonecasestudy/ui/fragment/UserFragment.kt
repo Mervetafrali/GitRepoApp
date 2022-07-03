@@ -58,7 +58,7 @@ class UserFragment : Fragment(R.layout.fragment_user) {
         }
         viewModel.userResponse.observe(requireActivity()) { user ->
             binding.name.text = user.name
-            binding.mail.text = user.email.toString()
+            binding.mail.text = user?.email
             binding.imageView2.load(user.avatar_url) {
                 crossfade(true)
                 crossfade(2000)
