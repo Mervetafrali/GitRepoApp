@@ -1,4 +1,4 @@
-# Vodafone Case Study
+
 Application that makes  API request and receives services.
 
 
